@@ -11,18 +11,22 @@ angular.module('ethicalSwitchApp')
       'story.join': 'Join'
     };
 
-    var flowKeys = Object.keys($scope.flow)
+    $scope.flowKeys = Object.keys($scope.flow);
 
     function nextState() {
-      return flowKeys[flowKeys.indexOf($state.current.name) + 1];
+      return $scope.flowKeys[$scope.flowKeys.indexOf($state.current.name) + 1];
+    }
+
+    $scope.storyState = function() {
+      return $state.current.name.replace('story.','');
     };
 
     $scope.hasNext = function() {
-      return !!nextState()
+      return !!nextState();
     };
 
-    $scope.nextName = function() {
-      $scope.flow[nextState()];
+    $scope.nextStateLabel = function() {
+      return $scope.flow[nextState()];
     };
 
     $scope.next = function() {

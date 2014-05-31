@@ -1,9 +1,18 @@
+<div class="header">
+  <ul class="">
+    <li ng-repeat="(position, state) in flowKeys" ui-sref-active='active'>
+      <a ui-sref="{{state}}">{{position + 1}}</a>
+    </li>
+  </ul>
+</div>
 <div class="view-container">
-  <div ui-view="" class="content"></div>
+  <div ui-view="" class="content story" ng-class="storyState()"></div>
 </div>
-<div class="next" ng-if="hasNext()">
-  <a ng-click="next()">Next</a>
-</div>
-<div class="next" ng-if="!hasNext()">
-  <a ui-sref="story.inspiration">Back</a>
+<div class="footer">
+  <div class="next" ng-if="hasNext()">
+    <a ng-click="next()">{{nextStateLabel()}}</a>
+  </div>
+  <div class="next" ng-if="!hasNext()">
+    <a ui-sref="story.inspiration">Back</a>
+  </div>
 </div>

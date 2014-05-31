@@ -1,7 +1,6 @@
 
 .view-container{
   //FIXME: Placeholder
-  height: 600px;
  }
 
 .container {
@@ -15,10 +14,7 @@
 }
 
 .content.ng-enter, .content.ng-leave {
-  -webkit-transition:all .5s ease-in-out;
-  -moz-transition:all .5s ease-in-out;
-  -o-transition:all .5s ease-in-out;
-  transition:all .5s ease-in-out;
+  @include transition(all .5s ease-out);
 }
 
 .content.ng-enter {
