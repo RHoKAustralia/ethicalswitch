@@ -1,0 +1,9 @@
+<div class="view-container">
+  <div ui-view="" class="content"></div>
+</div>
+<div class="next" ng-if="hasNext()">
+  <a ng-click="next()">Next</a>
+</div>
+<div class="next" ng-if="!hasNext()">
+  <a ui-sref="story.inspiration">Back</a>
+</div>

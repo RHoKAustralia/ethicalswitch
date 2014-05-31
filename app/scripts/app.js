@@ -10,20 +10,34 @@ angular
   .config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.otherwise('/');
     $stateProvider
-    .state('app', {
-      //controller: 'AppCtrl',
-      templateUrl: 'views/app.html',
+    .state('story', {
+      controller: 'StoryCtrl',
+      templateUrl: 'views/story.html',
       abstract: true,
     })
-    .state('app.main', {
+    .state('story.inspiration', {
       url: '/',
-      //controller: 'MainCtrl',
-      templateUrl: 'views/main.html'
+      templateUrl: 'views/story.inspiration.html'
     })
-    .state('app.faq', {
+    .state('story.motivation', {
+      url: '/motivation',
+      templateUrl: 'views/story.motivation.html'
+    })
+    .state('story.doing', {
+      url: '/what-we-are-doing',
+      templateUrl: 'views/story.what-we-are-doing.html'
+    })
+    .state('story.tribe', {
+      url: '/tribe',
+      templateUrl: 'views/story.tribe.html'
+    })
+    .state('story.join', {
+      url: '/join',
+      templateUrl: 'views/story.join.html'
+    })
+    .state('faq', {
       url: '/faq',
       //controller: 'FaqCtrl',
       templateUrl: 'views/faq.html'
     });
   });
-
