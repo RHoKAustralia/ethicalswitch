@@ -1,0 +1,39 @@
+
+.view-container{
+  //FIXME: Placeholder
+  height: 500px;
+ }
+
+.container {
+  position: relative;
+}
+
+.content.ng-enter, .content.ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition:all .5s ease-in-out;
+  -moz-transition:all .5s ease-in-out;
+  -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+
+.content.ng-enter {
+  opacity: 0;
+  @include translateY(100%);
+}
+
+.content.ng-enter-active {
+  opacity: 1;
+  @include translateY(0);
+}
+
+.content.ng-leave {
+  opacity: 1;
+  @include translateY(0);
+}
+
+.content.ng-leave-active {
+  opacity: 0;
+  @include translateY(-100%);
+}

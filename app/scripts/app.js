@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('ethicalSwitchApp', ['facebook', 'ui.router'])
+  .module('ethicalSwitchApp', ['facebook', 'ui.router', 'ngAnimate'])
   .config(['FacebookProvider', function(FacebookProvider) {
     // Here you could set your appId through the setAppId method and then initialize
     // or use the shortcut in the initialize method directly.
